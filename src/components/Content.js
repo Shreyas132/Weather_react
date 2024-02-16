@@ -41,6 +41,7 @@ const Content = () => {
   
     const handleSearchClick = () => {
       fetchData();
+    
     };
   return (
     <div>
@@ -61,11 +62,12 @@ const Content = () => {
 
         }}
       />
-      <button onClick={handleSearchClick}  style={{
+      <button className="search" onClick={handleSearchClick}  style={{
         width:"60px",
         height:"30px",
         borderStyle:"none",
         borderRadius:"3px",
+        
         
       }}>Search</button>
 
@@ -73,20 +75,22 @@ const Content = () => {
 
       {weatherData && (
         <div>
-          <h3>{weatherData.name}</h3>
-          <li><img  className='logo' src={hot} alt='Temp logo' style={style} />
+          <h3 style={{color:"white"}}>{weatherData.name}</h3>
+          <li><img  className='logo' src={hot} alt='Temp logo' style={ style } />
           Temperature: {weatherData.main.temp}°C</li>
           <li>Description: {weatherData.weather[0].description}</li>
           <li><img className='logo'  src={humidity}  alt='humidity logo' style={style}/>Humidity: {weatherData.main.humidity}</li>
           <li>Co-ordinates: long-{weatherData.coord.lon} Lat-{weatherData.coord.lat}</li>
           <li>Country: {weatherData.sys.country}</li>
-          <li><img  className='logo' src={wind} alt="wind soeed" style={style}/>Windspeed: {weatherData.wind.speed}km/hr</li>
+          <li><img  className='logo' src={wind} alt="wind speed" style={style}/>Windspeed: {weatherData.wind.speed}km/hr</li>
           
         </div>
       )}
+      
 
     </div>
   )
+  
 }
 
 export default Content
