@@ -83,7 +83,7 @@ const Content = () => {
           <li>Co-ordinates: long-{weatherData.coord.lon} Lat-{weatherData.coord.lat}</li>
           <li>Country: {weatherData.sys.country}</li>
           <li><img  className='logo' src={wind} alt="wind speed" style={style}/>Windspeed: {weatherData.wind.speed}km/hr</li>
-          
+          <li>Gust:{weatherData.wind.gust}</li>
         </div>
       )}
       
